@@ -27,7 +27,12 @@ void initializeLexer(const char* filename){
 Token getNextToken(){
     Token token;
     FILE* file = fopen("demo.c", "r");
+
+    
 }
+
+
+void categorizeToken(Token* token);
 
 
 int isKeyword(const char* str){
@@ -38,15 +43,23 @@ int isKeyword(const char* str){
     }
     return 0;
 }
+
+
 int isOperator(const char* str){
     return strchr(operators, str[0]) != NULL;
 }
+
+
 int isSpecialCharacter(char ch){
     return strchr(specialCharacters, ch) != NULL;
 }
+
+
 int isConstant(const char* str){
     return isdigit(str[0]) != 0;
 }
+
+
 int isIdentifier(const char* str){
     if (!isalpha(str[0]) && str[0] != '_') {
         return 0;
