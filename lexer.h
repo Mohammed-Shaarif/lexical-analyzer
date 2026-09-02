@@ -18,12 +18,14 @@ typedef struct {
     TokenType type;
 } Token;
 
-void initializeLexer(const char* filename);
+FILE* initializeLexer(const char* filename);
+void closeFile(FILE* file);
 Token getNextToken();
 void categorizeToken(Token* token);
 int isKeyword(const char* str);
 int isOperator(const char* str);
-int isSpecialCharacter(char ch);
+int isStringLiteral(const char* str);
+int isSpecialCharacter(const char* str);
 int isConstant(const char* str);
 int isIdentifier(const char* str);
 

@@ -2,12 +2,17 @@
 #include "lexer.h"
 
 int main(int argc, char *argv[]) {
-    initializeLexer(argv[1]);
+    FILE* file = initializeLexer(argv[1]);
 
-    Token token;
-    while ((token = getNextToken()).type != UNKNOWN) {
-        printf("Token: %s, Type: %d\n", token.lexeme, token.type);
-    }
 
+
+    // Token token;
+    // while ((token = getNextToken()).type != UNKNOWN && token.lexeme[0] != '\0') {
+    //     printf("Token: %s, Type: %d\n", token.lexeme, token.type);
+    // }
+
+    getNextToken();
+    
+    closeFile(file);
     return 0;
 }
