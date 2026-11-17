@@ -1,16 +1,21 @@
-// dummy program to test lexer.c
-
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
-    int x = 10;
-    float y = 3.14;
-    char z = 'A';
-    if (x > 5) {
-        printf("x is greater than 5\n");
-    } else {
-        printf("x is not greater than 5\n");
-    }
+    int num = 10;        // Invalid identifier
+
+    float value = 12.3456; // Invalid floating constant
+
+    char ch = 'A';         // Invalid character constant
+
+    char c = 'x';            // Unterminated character literal
+
+    string msg = "Hello";    // Unterminated string literal
+
+    int a = 10 @ 20;        // Invalid operator/token
+
+    int b = 0xab;           // Invalid hexadecimal constant
+
+    int x = -100;
+
     return 0;
 }

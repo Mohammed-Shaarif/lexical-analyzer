@@ -10,6 +10,7 @@ typedef enum {
     SPECIAL_CHARACTER,
     CONSTANT,
     IDENTIFIER,
+    LITERAL,
     UNKNOWN
 } TokenType;
 
@@ -20,6 +21,7 @@ typedef struct {
 
 FILE* initializeLexer(const char* filename);
 void closeFile(FILE* file);
+int checkFileError(FILE *fp);
 Token getNextToken();
 void categorizeToken(Token* token);
 int isKeyword(const char* str);
@@ -28,5 +30,6 @@ int isStringLiteral(const char* str);
 int isSpecialCharacter(const char* str);
 int isConstant(const char* str);
 int isIdentifier(const char* str);
+
 
 #endif
